@@ -17,12 +17,12 @@
                 <span class="logo-sq">SQ</span><span class="logo-dash">-</span><span class="logo-3i">3I</span>
             </a>
             <ul class="nav-menu">
-                <li><a href="#nosotros" data-section="nosotros">Nosotros</a></li>
-                <li><a href="#servicios" data-section="servicios">Servicios</a></li>
-                <li><a href="#productos" data-section="productos">Productos</a></li>
-                <li><a href="#sectores" data-section="sectores">Sectores</a></li>
-                <li><a href="#clientes" data-section="clientes">Clientes</a></li>
-                <li><a href="#contacto" data-section="contacto">Contacto</a></li>
+                <li><a href="#nosotros" data-section="nosotros" data-i18n="nav.about">Nosotros</a></li>
+                <li><a href="#servicios" data-section="servicios" data-i18n="nav.services">Servicios</a></li>
+                <li><a href="#productos" data-section="productos" data-i18n="nav.products">Productos</a></li>
+                <li><a href="#sectores" data-section="sectores" data-i18n="nav.sectors">Sectores</a></li>
+                <li><a href="#clientes" data-section="clientes" data-i18n="nav.clients">Clientes</a></li>
+                <li><a href="#contacto" data-section="contacto" data-i18n="nav.contact">Contacto</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Abrir menú">
                 <span></span><span></span><span></span>
@@ -30,27 +30,25 @@
         </div>
     </nav>
 
-    <aside class="side-nav" id="sideNav" aria-label="Navegación lateral">
-        <ul>
-            <li><a href="#nosotros" data-section="nosotros"><span class="dot"></span><span class="label">Nosotros</span></a></li>
-            <li><a href="#servicios" data-section="servicios"><span class="dot"></span><span class="label">Servicios</span></a></li>
-            <li><a href="#productos" data-section="productos"><span class="dot"></span><span class="label">Productos</span></a></li>
-            <li><a href="#sectores" data-section="sectores"><span class="dot"></span><span class="label">Sectores</span></a></li>
-            <li><a href="#clientes" data-section="clientes"><span class="dot"></span><span class="label">Clientes</span></a></li>
-            <li><a href="#contacto" data-section="contacto"><span class="dot"></span><span class="label">Contacto</span></a></li>
-        </ul>
-    </aside>
+    <button class="lang-toggle" id="langToggle" aria-label="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-label" id="langLabel">EN</span>
+    </button>
 
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="hero-line-1">Ingeniería</span>
-                <span class="hero-line-2">e Insumos Industriales</span>
+                <span class="hero-line-1" data-i18n="hero.line1">Ingeniería</span>
+                <span class="hero-line-2" data-i18n="hero.line2">e Insumos Industriales</span>
             </h1>
-            <p class="hero-subtitle">Embalajes industriales, estructuras metálicas y soluciones de precisión.</p>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Embalajes industriales, estructuras metálicas y soluciones de precisión.</p>
             <div class="hero-actions">
-                <a href="#productos" class="btn-primary">Conoce nuestros productos</a>
-                <a href="#contacto" class="btn-secondary">Solicitar cotización →</a>
+                <a href="#productos" class="btn-primary" data-i18n="hero.cta1">Conoce nuestros productos</a>
+                <a href="#contacto" class="btn-secondary" data-i18n="hero.cta2">Solicitar cotización →</a>
             </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -59,14 +57,14 @@
             <div class="hero-shape shape-3"></div>
         </div>
         <div class="hero-scroll-indicator">
-            <span>Desplazar</span>
+            <span data-i18n="hero.scroll">Desplazar</span>
             <div class="scroll-arrow"></div>
         </div>
     </section>
 
     <section id="nosotros" class="section section-about">
         <div class="container">
-            <h2 class="section-title reveal">
+            <h2 class="section-title reveal" data-i18n="about.title" data-i18n-html>
                 Diseñamos y fabricamos<br>
                 <span class="text-gradient">soluciones industriales</span><br>
                 cimentadas en experiencia<br>
@@ -75,15 +73,15 @@
             <div class="about-grid">
                 <div class="about-card reveal">
                     <div class="about-number">15+</div>
-                    <p>Años de experiencia en el sector industrial.</p>
+                    <p data-i18n="about.card1">Años de experiencia en el sector industrial.</p>
                 </div>
                 <div class="about-card reveal">
                     <div class="about-number">04</div>
-                    <p>Sectores especializados que atendemos con precisión.</p>
+                    <p data-i18n="about.card2">Sectores especializados que atendemos con precisión.</p>
                 </div>
                 <div class="about-card reveal">
                     <div class="about-number">100%</div>
-                    <p>Compromiso con la calidad de cada entrega.</p>
+                    <p data-i18n="about.card3">Compromiso con la calidad de cada entrega.</p>
                 </div>
             </div>
         </div>
@@ -91,7 +89,7 @@
 
     <section id="servicios" class="section section-services">
         <div class="container">
-            <h2 class="section-title reveal">
+            <h2 class="section-title reveal" data-i18n="services.title" data-i18n-html>
                 Nos apasiona lo que hacemos<br>
                 <span class="text-muted">y se nota en los resultados.</span>
             </h2>
@@ -105,8 +103,8 @@
                             <path d="M14 36l10 6 16-10 10 6"/>
                         </svg>
                     </div>
-                    <h3>Fabricación</h3>
-                    <p>Embalajes de madera, cartón, estructuras metálicas y etiquetas adaptados a cada necesidad.</p>
+                    <h3 data-i18n="services.card1Title">Fabricación</h3>
+                    <p data-i18n="services.card1Desc">Embalajes de madera, cartón, estructuras metálicas y etiquetas adaptados a cada necesidad.</p>
                 </article>
 
                 <article class="service-card reveal">
@@ -117,8 +115,8 @@
                             <circle cx="32" cy="22" r="2" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3>Corte y grabado CNC</h3>
-                    <p>Precisión en madera, aluminio, acrílico, foam y cartón. Router, plasma y navaja hasta 4" de grosor.</p>
+                    <h3 data-i18n="services.card2Title">Corte y grabado CNC</h3>
+                    <p data-i18n="services.card2Desc">Precisión en madera, aluminio, acrílico, foam y cartón. Router, plasma y navaja hasta 4" de grosor.</p>
                 </article>
 
                 <article class="service-card reveal">
@@ -130,8 +128,8 @@
                             <circle cx="50" cy="52" r="4"/>
                         </svg>
                     </div>
-                    <h3>Suministro</h3>
-                    <p>Madera, cartón, espuma de poliuretano, lámina y artículos para transformación industrial.</p>
+                    <h3 data-i18n="services.card3Title">Suministro</h3>
+                    <p data-i18n="services.card3Desc">Madera, cartón, espuma de poliuretano, lámina y artículos para transformación industrial.</p>
                 </article>
             </div>
         </div>
@@ -139,7 +137,7 @@
 
     <section id="productos" class="section section-products">
         <div class="products-container">
-            <h2 class="section-title reveal">
+            <h2 class="section-title reveal" data-i18n="products.title" data-i18n-html>
                 Productos diseñados<br>
                 <span class="text-gradient">bajo estándares industriales.</span>
             </h2>
@@ -150,15 +148,15 @@
                         <div class="product-mock mock-crate"></div>
                     </div>
                     <div class="product-content">
-                        <p class="product-eyebrow">Embalaje para exportación</p>
-                        <h3>Embalajes de madera certificados NIMF-15.</h3>
-                        <p class="product-desc">Embalajes con tratamiento térmico HT que cumplen la Norma Internacional de Medidas Fitosanitarias NIMF-15, garantizando el ingreso de su mercancía en cualquier destino de exportación.</p>
+                        <p class="product-eyebrow" data-i18n="products.p1Eyebrow">Embalaje para exportación</p>
+                        <h3 data-i18n="products.p1Title">Embalajes de madera certificados NIMF-15.</h3>
+                        <p class="product-desc" data-i18n="products.p1Desc">Embalajes con tratamiento térmico HT que cumplen la Norma Internacional de Medidas Fitosanitarias NIMF-15, garantizando el ingreso de su mercancía en cualquier destino de exportación.</p>
                         <ul class="product-features">
-                            <li>Tratamiento térmico HT certificado IPPC</li>
-                            <li>Estructura en pino cepillado y estufado de 1"</li>
-                            <li>Triplay de 3/4" de primera calidad</li>
-                            <li>Herrajes industriales reforzados</li>
-                            <li>Marcado fitosanitario y estarcido a medida</li>
+                            <li data-i18n="products.p1F1">Tratamiento térmico HT certificado IPPC</li>
+                            <li data-i18n="products.p1F2">Estructura en pino cepillado y estufado de 1"</li>
+                            <li data-i18n="products.p1F3">Triplay de 3/4" de primera calidad</li>
+                            <li data-i18n="products.p1F4">Herrajes industriales reforzados</li>
+                            <li data-i18n="products.p1F5">Marcado fitosanitario y estarcido a medida</li>
                         </ul>
                     </div>
                 </article>
@@ -168,15 +166,15 @@
                         <div class="product-mock mock-foam"></div>
                     </div>
                     <div class="product-content">
-                        <p class="product-eyebrow">Empaque de protección técnica</p>
-                        <h3>Soluciones de empaque para componentes críticos.</h3>
-                        <p class="product-desc">Diseño de empaques internos con espumas técnicas y cavidades a medida que protegen componentes electrónicos, mecánicos y de alto valor durante todo el ciclo logístico.</p>
+                        <p class="product-eyebrow" data-i18n="products.p2Eyebrow">Empaque de protección técnica</p>
+                        <h3 data-i18n="products.p2Title">Soluciones de empaque para componentes críticos.</h3>
+                        <p class="product-desc" data-i18n="products.p2Desc">Diseño de empaques internos con espumas técnicas y cavidades a medida que protegen componentes electrónicos, mecánicos y de alto valor durante todo el ciclo logístico.</p>
                         <ul class="product-features">
-                            <li>Espumas antiestáticas (ESD) certificadas</li>
-                            <li>Polietileno y poliuretano de alta densidad</li>
-                            <li>Cavidades CNC según geometría de la pieza</li>
-                            <li>Cartón corrugado de doble y triple pared</li>
-                            <li>Diseño verificado con primera pieza aprobada</li>
+                            <li data-i18n="products.p2F1">Espumas antiestáticas (ESD) certificadas</li>
+                            <li data-i18n="products.p2F2">Polietileno y poliuretano de alta densidad</li>
+                            <li data-i18n="products.p2F3">Cavidades CNC según geometría de la pieza</li>
+                            <li data-i18n="products.p2F4">Cartón corrugado de doble y triple pared</li>
+                            <li data-i18n="products.p2F5">Diseño verificado con primera pieza aprobada</li>
                         </ul>
                     </div>
                 </article>
@@ -186,15 +184,15 @@
                         <div class="product-mock mock-metal"></div>
                     </div>
                     <div class="product-content">
-                        <p class="product-eyebrow">Estructuras metálicas</p>
-                        <h3>Fabricación metalmecánica a la medida.</h3>
-                        <p class="product-desc">Diseñamos y fabricamos estructuras metálicas que se integran a la línea de producción del cliente: bases de carga, soportes técnicos y mobiliario industrial en acero estructural.</p>
+                        <p class="product-eyebrow" data-i18n="products.p3Eyebrow">Estructuras metálicas</p>
+                        <h3 data-i18n="products.p3Title">Fabricación metalmecánica a la medida.</h3>
+                        <p class="product-desc" data-i18n="products.p3Desc">Diseñamos y fabricamos estructuras metálicas que se integran a la línea de producción del cliente: bases de carga, soportes técnicos y mobiliario industrial en acero estructural.</p>
                         <ul class="product-features">
-                            <li>Bases de carga y soportes especializados</li>
-                            <li>Mesas de trabajo en acero industrial</li>
-                            <li>Ingeniería de diseño según especificación</li>
-                            <li>Soldadura MIG y TIG bajo norma</li>
-                            <li>Recubrimiento anticorrosivo de alta durabilidad</li>
+                            <li data-i18n="products.p3F1">Bases de carga y soportes especializados</li>
+                            <li data-i18n="products.p3F2">Mesas de trabajo en acero industrial</li>
+                            <li data-i18n="products.p3F3">Ingeniería de diseño según especificación</li>
+                            <li data-i18n="products.p3F4">Soldadura MIG y TIG bajo norma</li>
+                            <li data-i18n="products.p3F5">Recubrimiento anticorrosivo de alta durabilidad</li>
                         </ul>
                     </div>
                 </article>
@@ -204,15 +202,15 @@
                         <div class="product-mock mock-label"></div>
                     </div>
                     <div class="product-content">
-                        <p class="product-eyebrow">Etiquetado e identificación</p>
-                        <h3>Etiquetas para trazabilidad y logística.</h3>
-                        <p class="product-desc">Producción de etiquetas térmicas y de empaque con la consistencia y resistencia que exigen los procesos industriales y la cadena de suministro moderna.</p>
+                        <p class="product-eyebrow" data-i18n="products.p4Eyebrow">Etiquetado e identificación</p>
+                        <h3 data-i18n="products.p4Title">Etiquetas para trazabilidad y logística.</h3>
+                        <p class="product-desc" data-i18n="products.p4Desc">Producción de etiquetas térmicas y de empaque con la consistencia y resistencia que exigen los procesos industriales y la cadena de suministro moderna.</p>
                         <ul class="product-features">
-                            <li>Impresión térmica directa y transferencia térmica</li>
-                            <li>Códigos de barras, QR y datos variables</li>
-                            <li>Adhesivos para ambientes industriales</li>
-                            <li>Sustratos en poliéster, vinilo y papel</li>
-                            <li>Tirajes cortos y de alto volumen</li>
+                            <li data-i18n="products.p4F1">Impresión térmica directa y transferencia térmica</li>
+                            <li data-i18n="products.p4F2">Códigos de barras, QR y datos variables</li>
+                            <li data-i18n="products.p4F3">Adhesivos para ambientes industriales</li>
+                            <li data-i18n="products.p4F4">Sustratos en poliéster, vinilo y papel</li>
+                            <li data-i18n="products.p4F5">Tirajes cortos y de alto volumen</li>
                         </ul>
                     </div>
                 </article>
@@ -222,7 +220,7 @@
 
     <section id="sectores" class="section section-sectors">
         <div class="container">
-            <h2 class="section-title reveal">
+            <h2 class="section-title reveal" data-i18n="sectors.title" data-i18n-html>
                 Adaptamos cada solución<br>
                 <span class="text-gradient">a la industria que lo exige.</span>
             </h2>
@@ -235,8 +233,8 @@
                             <path d="M32 32l16 16"/>
                         </svg>
                     </div>
-                    <h3>Aeroespacial</h3>
-                    <p>Embalajes especializados que cumplen con los estándares de la industria aeronáutica.</p>
+                    <h3 data-i18n="sectors.s1Title">Aeroespacial</h3>
+                    <p data-i18n="sectors.s1Desc">Embalajes especializados que cumplen con los estándares de la industria aeronáutica.</p>
                 </div>
 
                 <div class="sector-card reveal">
@@ -246,8 +244,8 @@
                             <path d="M8 52h48M20 52V36h8v16M36 52V36h8v16"/>
                         </svg>
                     </div>
-                    <h3>Gubernamental</h3>
-                    <p>Cumplimiento de especificaciones y entrega confiable para proyectos institucionales.</p>
+                    <h3 data-i18n="sectors.s2Title">Gubernamental</h3>
+                    <p data-i18n="sectors.s2Desc">Cumplimiento de especificaciones y entrega confiable para proyectos institucionales.</p>
                 </div>
 
                 <div class="sector-card reveal">
@@ -258,8 +256,8 @@
                             <circle cx="48" cy="48" r="4"/>
                         </svg>
                     </div>
-                    <h3>Automotriz</h3>
-                    <p>Soluciones de empaque y estructuras para la cadena de suministro del sector automotriz.</p>
+                    <h3 data-i18n="sectors.s3Title">Automotriz</h3>
+                    <p data-i18n="sectors.s3Desc">Soluciones de empaque y estructuras para la cadena de suministro del sector automotriz.</p>
                 </div>
             </div>
         </div>
@@ -267,7 +265,7 @@
 
     <section class="section section-culture">
         <div class="container">
-            <h2 class="culture-title reveal">
+            <h2 class="culture-title reveal" data-i18n="culture.full" data-i18n-html>
                 <span class="culture-accent">Orden, compromiso y sentido común</span><br>
                 <span class="culture-rest">son nuestra cultura de trabajo.</span>
             </h2>
@@ -276,7 +274,7 @@
 
     <section id="clientes" class="section section-clients">
         <div class="container">
-            <h2 class="section-title reveal">
+            <h2 class="section-title reveal" data-i18n="clients.title" data-i18n-html>
                 Empresas líderes<br>
                 <span class="text-gradient">confían en SQ-3I.</span>
             </h2>
@@ -292,7 +290,7 @@
 
     <section id="contacto" class="section section-contact">
         <div class="container">
-            <h2 class="section-title reveal">
+            <h2 class="section-title reveal" data-i18n="contact.title" data-i18n-html>
                 Hablemos de tu<br>
                 <span class="text-gradient">próximo proyecto.</span>
             </h2>
@@ -304,7 +302,7 @@
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
                         </svg>
                     </div>
-                    <p class="contact-label">Teléfono</p>
+                    <p class="contact-label" data-i18n="contact.phone">Teléfono</p>
                     <p class="contact-value">(625) 106 9637</p>
                 </a>
 
@@ -315,7 +313,7 @@
                             <path d="m2 7 10 6 10-6"/>
                         </svg>
                     </div>
-                    <p class="contact-label">Email</p>
+                    <p class="contact-label" data-i18n="contact.email">Email</p>
                     <p class="contact-value">Ventas@soluetiqueta.com</p>
                 </a>
 
@@ -326,8 +324,8 @@
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <p class="contact-label">Ubicación</p>
-                    <p class="contact-value">C. Villa Santa Lucía #12807<br>Chihuahua, Chih.</p>
+                    <p class="contact-label" data-i18n="contact.location">Ubicación</p>
+                    <p class="contact-value" data-i18n="contact.address" data-i18n-html>C. Villa Santa Lucía #12807<br>Chihuahua, Chih.</p>
                 </div>
             </div>
         </div>
@@ -339,11 +337,11 @@
                 <div class="footer-brand">
                     <span class="logo-sq">SQ</span><span class="logo-dash">-</span><span class="logo-3i">3I</span>
                 </div>
-                <p class="footer-tagline">Ingeniería e Insumos Industriales</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">Ingeniería e Insumos Industriales</p>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 SQ-3I. Todos los derechos reservados.</p>
-                <p>Chihuahua, México</p>
+                <p data-i18n="footer.copy">© 2026 SQ-3I. Todos los derechos reservados.</p>
+                <p data-i18n="footer.location">Chihuahua, México</p>
             </div>
         </div>
     </footer>
