@@ -268,7 +268,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-brand {
-    font-size: clamp(96px, 16vw, 220px);
+    font-size: clamp(67px, 11.2vw, 154px);
     font-weight: 900;
     color: #ffffff;
     letter-spacing: -0.04em;
@@ -277,11 +277,6 @@ h1, h2, h3, h4 {
     margin: 0 auto 24px;
     text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
     animation: fadeInUp 1s var(--ease-out) both;
-}
-
-.hero-brand-i {
-    font-family: 'Times New Roman', Times, 'Liberation Serif', serif;
-    font-weight: 700;
 }
 
 .hero-line-1 {
@@ -983,6 +978,10 @@ h1, h2, h3, h4 {
     margin-top: 32px;
 }
 
+.contact-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .contact-card {
     padding: 48px 40px;
     background: white;
@@ -1023,6 +1022,145 @@ h1, h2, h3, h4 {
     font-weight: 500;
     color: var(--color-text);
     line-height: 1.4;
+}
+
+/* ============================================
+   Bloque de instalaciones (ubicación + slideshow)
+   ============================================ */
+
+.facility-block {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.04);
+}
+
+.facility-info {
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.facility-info .contact-icon {
+    color: var(--color-accent);
+    width: 44px;
+    height: 44px;
+    margin-bottom: 20px;
+}
+
+.facility-info .contact-label {
+    margin-bottom: 12px;
+}
+
+.facility-title {
+    font-size: clamp(26px, 2.6vw, 34px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--color-text);
+}
+
+.facility-address {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.facility-copy {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.facility-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-accent);
+    align-self: flex-start;
+    transition: all 0.3s var(--ease-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.facility-link:hover {
+    color: var(--color-accent-hover);
+    transform: translateX(4px);
+}
+
+/* Slideshow */
+.facility-slideshow {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    background: #0f0f10;
+}
+
+.facility-slideshow .slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 1.1s var(--ease-out), transform 6s ease-out;
+    will-change: opacity, transform;
+}
+
+.facility-slideshow .slide.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+}
+
+.facility-slideshow::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.slideshow-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+}
+
+.slideshow-dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.slideshow-dots button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.slideshow-dots button.active {
+    background: white;
+    width: 24px;
+    border-radius: 4px;
 }
 
 /* ============================================
@@ -1141,8 +1279,22 @@ h1, h2, h3, h4 {
     .about-grid,
     .services-grid,
     .contact-grid,
+    .contact-grid--two,
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    .facility-block {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-info {
+        padding: 40px 28px;
+    }
+
+    .facility-slideshow {
+        min-height: 280px;
+        aspect-ratio: 4/3;
     }
 
     .sectors-grid {

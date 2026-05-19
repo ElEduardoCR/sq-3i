@@ -129,6 +129,78 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
+// Slideshow de instalaciones
+// ============================================
+
+const slideshow = document.getElementById('facilitySlideshow');
+
+if (slideshow) {
+    const slides = slideshow.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('slideshowDots');
+    let current = 0;
+    let timer = null;
+    const INTERVAL = 3000;
+
+    // Crea los indicadores (dots)
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Imagen ${i + 1}`);
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('button');
+
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current]?.classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current]?.classList.add('active');
+        restart();
+    }
+
+    function next() {
+        goTo(current + 1);
+    }
+
+    function start() {
+        stop();
+        timer = setInterval(next, INTERVAL);
+    }
+
+    function stop() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    function restart() {
+        if (timer) start();
+    }
+
+    // Inicia / pausa según la visibilidad de la sección
+    const visibilityObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                start();
+            } else {
+                stop();
+            }
+        });
+    }, { threshold: 0.25 });
+
+    visibilityObserver.observe(slideshow);
+
+    // Pausa al hacer hover
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
+}
+
+// ============================================
 // i18n — traducción ES / EN
 // ============================================
 
@@ -220,6 +292,10 @@ const translations = {
         'contact.location': 'Ubicación',
         'contact.address': 'C. Villa Santa Lucía #12807<br>Chihuahua, Chih.',
 
+        'facility.title': 'Nuestras instalaciones',
+        'facility.copy': 'Conoce nuestra planta en Chihuahua, donde cada embalaje, etiqueta y estructura toma forma con la calidad que distingue a SQ-3I.',
+        'facility.cta': 'Ver en Google Maps →',
+
         'footer.tagline': 'Ingeniería e Insumos Industriales',
         'footer.copy': '© 2026 SQ-3I. Todos los derechos reservados.',
         'footer.location': 'Chihuahua, México'
@@ -310,6 +386,10 @@ const translations = {
         'contact.email': 'Email',
         'contact.location': 'Location',
         'contact.address': 'C. Villa Santa Lucía #12807<br>Chihuahua, Mexico',
+
+        'facility.title': 'Our facilities',
+        'facility.copy': 'Visit our plant in Chihuahua, where every package, label, and structure takes shape with the quality that defines SQ-3I.',
+        'facility.cta': 'Open in Google Maps →',
 
         'footer.tagline': 'Engineering & Industrial Supplies',
         'footer.copy': '© 2026 SQ-3I. All rights reserved.',
