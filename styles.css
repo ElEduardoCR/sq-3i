@@ -235,9 +235,9 @@ h1, h2, h3, h4 {
     object-fit: cover;
     object-position: center;
     z-index: 0;
-    opacity: 0.7;
+    opacity: 1;
     pointer-events: none;
-    filter: saturate(0.95) contrast(1.05);
+    filter: saturate(1) contrast(1.05);
 }
 
 .hero-overlay {
@@ -246,8 +246,8 @@ h1, h2, h3, h4 {
     z-index: 1;
     pointer-events: none;
     background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.72) 100%),
-        radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.6) 75%);
+        linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.42) 100%),
+        radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 80%);
 }
 
 .hero-content {
@@ -275,14 +275,18 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     line-height: 0.9;
     margin: 0 auto 24px;
-    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 8px 40px rgba(0, 0, 0, 0.7);
     animation: fadeInUp 1s var(--ease-out) both;
 }
 
 .hero-line-1 {
     display: block;
     color: #ffffff;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.4),
+        0 4px 28px rgba(0, 0, 0, 0.55);
     animation: fadeInUp 1s var(--ease-out) 0.1s both;
 }
 
@@ -298,10 +302,12 @@ h1, h2, h3, h4 {
 .hero-subtitle {
     font-size: clamp(18px, 2.3vw, 26px);
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.95);
     margin: 0 auto 40px;
     max-width: 700px;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        0 2px 18px rgba(0, 0, 0, 0.55);
     animation: fadeInUp 1s var(--ease-out) 0.4s both;
 }
 
