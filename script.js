@@ -205,6 +205,8 @@ const translations = {
         'sectors.s2Desc': 'Cumplimiento de especificaciones y entrega confiable para proyectos institucionales.',
         'sectors.s3Title': 'Automotriz',
         'sectors.s3Desc': 'Soluciones de empaque y estructuras para la cadena de suministro del sector automotriz.',
+        'sectors.s4Title': 'Maquiladora',
+        'sectors.s4Desc': 'Soluciones integrales de empaque, etiquetado y estructuras para operaciones de manufactura de exportación.',
 
         'culture.full': '<span class="culture-accent">Orden, compromiso y sentido común</span><br><span class="culture-rest">son nuestra cultura de trabajo.</span>',
 
@@ -292,6 +294,8 @@ const translations = {
         'sectors.s2Desc': 'Specification compliance and reliable delivery for institutional projects.',
         'sectors.s3Title': 'Automotive',
         'sectors.s3Desc': 'Packaging and structural solutions for the automotive supply chain.',
+        'sectors.s4Title': 'Maquiladora',
+        'sectors.s4Desc': 'End-to-end packaging, labeling, and structural solutions for export manufacturing operations.',
 
         'culture.full': '<span class="culture-accent">Order, commitment, and common sense</span><br><span class="culture-rest">are our work culture.</span>',
 
@@ -310,8 +314,14 @@ const translations = {
 };
 
 const langToggle = document.getElementById('langToggle');
-const langLabel = document.getElementById('langLabel');
+const langFlag = document.getElementById('langFlag');
 let currentLang = localStorage.getItem('sq3i-lang') || 'es';
+
+// Bandera del idioma DESTINO (la que verías al hacer click)
+const FLAGS = {
+    es: '🇺🇸', // 🇺🇸 — actualmente ES, click → EN
+    en: '🇲🇽'  // 🇲🇽 — actualmente EN, click → ES
+};
 
 function applyLang(lang) {
     document.documentElement.lang = lang;
@@ -329,17 +339,27 @@ function applyLang(lang) {
         }
     });
 
-    // Etiqueta del botón: muestra el idioma al que cambiarías
-    langLabel.textContent = lang === 'es' ? 'EN' : 'ES';
-    langLabel.classList.remove('flip');
-    void langLabel.offsetWidth; // reflow para reiniciar animación
-    langLabel.classList.add('flip');
+    if (langFlag) {
+        langFlag.textContent = FLAGS[lang];
+        langFlag.classList.remove('flip');
+        void langFlag.offsetWidth; // reflow para reiniciar animación
+        langFlag.classList.add('flip');
+    }
+
+    if (langToggle) {
+        langToggle.setAttribute(
+            'aria-label',
+            lang === 'es' ? 'Switch to English' : 'Cambiar a español'
+        );
+    }
 
     localStorage.setItem('sq3i-lang', lang);
     currentLang = lang;
 }
 
-langToggle.addEventListener('click', () => {
+langToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     const next = currentLang === 'es' ? 'en' : 'es';
     applyLang(next);
 });

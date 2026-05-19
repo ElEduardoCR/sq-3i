@@ -23,6 +23,11 @@
                 <li><a href="#sectores" data-section="sectores" data-i18n="nav.sectors">Sectores</a></li>
                 <li><a href="#clientes" data-section="clientes" data-i18n="nav.clients">Clientes</a></li>
                 <li><a href="#contacto" data-section="contacto" data-i18n="nav.contact">Contacto</a></li>
+                <li class="nav-lang-item">
+                    <button class="nav-lang-btn" id="langToggle" aria-label="Change language">
+                        <span class="lang-flag" id="langFlag" aria-hidden="true">🇺🇸</span>
+                    </button>
+                </li>
             </ul>
             <button class="nav-toggle" aria-label="Abrir menú">
                 <span></span><span></span><span></span>
@@ -30,16 +35,11 @@
         </div>
     </nav>
 
-    <button class="lang-toggle" id="langToggle" aria-label="Change language">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M2 12h20"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-        </svg>
-        <span class="lang-label" id="langLabel">EN</span>
-    </button>
-
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+            <source src="hero_video/hero_sq-3i.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="hero-line-1" data-i18n="hero.line1">Ingeniería</span>
@@ -259,6 +259,20 @@
                     <h3 data-i18n="sectors.s3Title">Automotriz</h3>
                     <p data-i18n="sectors.s3Desc">Soluciones de empaque y estructuras para la cadena de suministro del sector automotriz.</p>
                 </div>
+
+                <div class="sector-card reveal">
+                    <div class="sector-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+                            <path d="M4 54V32l14 8V32l14 8V20h16v34"/>
+                            <path d="M4 54h56"/>
+                            <path d="M40 28h12M40 36h12M40 44h12"/>
+                            <rect x="12" y="46" width="6" height="8"/>
+                            <rect x="24" y="46" width="6" height="8"/>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="sectors.s4Title">Maquiladora</h3>
+                    <p data-i18n="sectors.s4Desc">Soluciones integrales de empaque, etiquetado y estructuras para operaciones de manufactura de exportación.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -317,7 +331,7 @@
                     <p class="contact-value">(625) 106 9637</p>
                 </a>
 
-                <a href="mailto:Ventas@soluetiqueta.com" class="contact-card reveal">
+                <a href="mailto:ventas@sq3i.com" class="contact-card reveal">
                     <div class="contact-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -325,7 +339,7 @@
                         </svg>
                     </div>
                     <p class="contact-label" data-i18n="contact.email">Email</p>
-                    <p class="contact-value">Ventas@soluetiqueta.com</p>
+                    <p class="contact-value">ventas@sq3i.com</p>
                 </a>
 
                 <div class="contact-card reveal">
