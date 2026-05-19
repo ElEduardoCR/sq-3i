@@ -267,15 +267,21 @@ h1, h2, h3, h4 {
     margin-bottom: 24px;
 }
 
-.hero-logo {
-    display: block;
-    width: clamp(420px, 48vw, 660px);
-    max-width: 92%;
-    height: auto;
-    margin: 0 auto 28px;
-    border-radius: 12px;
-    filter: drop-shadow(0 12px 36px rgba(0, 0, 0, 0.55));
+.hero-brand {
+    font-size: clamp(96px, 16vw, 220px);
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin: 0 auto 24px;
+    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.55);
     animation: fadeInUp 1s var(--ease-out) both;
+}
+
+.hero-brand-i {
+    font-family: 'Times New Roman', Times, 'Liberation Serif', serif;
+    font-weight: 700;
 }
 
 .hero-line-1 {
