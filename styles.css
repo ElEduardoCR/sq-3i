@@ -825,15 +825,15 @@ h1, h2, h3, h4 {
 
 .sectors-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
     margin-top: 32px;
 }
 
 .sector-card {
-    padding: 40px 32px;
+    padding: 32px 26px;
     background: white;
-    border-radius: 24px;
+    border-radius: 22px;
     text-align: left;
     transition: all 0.4s var(--ease-out);
     border: 1px solid var(--color-border);
@@ -845,27 +845,27 @@ h1, h2, h3, h4 {
 }
 
 .sector-icon {
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
     color: var(--color-brand-blue);
-    margin-bottom: 24px;
-    padding: 16px;
+    margin-bottom: 20px;
+    padding: 13px;
     background: rgba(29, 78, 216, 0.08);
-    border-radius: 16px;
+    border-radius: 14px;
 }
 
 .sector-icon svg { width: 100%; height: 100%; }
 
 .sector-card h3 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .sector-card p {
-    font-size: 15px;
+    font-size: 14px;
     color: var(--color-text-muted);
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 /* ============================================
@@ -1147,6 +1147,7 @@ h1, h2, h3, h4 {
 
     .sectors-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .products-container { width: 90%; }
@@ -1170,10 +1171,10 @@ h1, h2, h3, h4 {
     }
 }
 
-@media (max-width: 1100px) and (min-width: 969px) {
+@media (max-width: 1200px) and (min-width: 969px) {
     .sectors-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
     }
 }
 

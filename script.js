@@ -207,6 +207,8 @@ const translations = {
         'sectors.s3Desc': 'Soluciones de empaque y estructuras para la cadena de suministro del sector automotriz.',
         'sectors.s4Title': 'Maquiladora',
         'sectors.s4Desc': 'Soluciones integrales de empaque, etiquetado y estructuras para operaciones de manufactura de exportación.',
+        'sectors.s5Title': 'Electrónica',
+        'sectors.s5Desc': 'Cajas de cartón con espuma antiestática (ESD) y cavidades a medida para proteger componentes electrónicos sensibles.',
 
         'culture.full': '<span class="culture-accent">Orden, compromiso y sentido común</span><br><span class="culture-rest">son nuestra cultura de trabajo.</span>',
 
@@ -296,6 +298,8 @@ const translations = {
         'sectors.s3Desc': 'Packaging and structural solutions for the automotive supply chain.',
         'sectors.s4Title': 'Maquiladora',
         'sectors.s4Desc': 'End-to-end packaging, labeling, and structural solutions for export manufacturing operations.',
+        'sectors.s5Title': 'Electronics',
+        'sectors.s5Desc': 'Cardboard boxes with antistatic (ESD) foam and custom cavities engineered to protect sensitive electronic components.',
 
         'culture.full': '<span class="culture-accent">Order, commitment, and common sense</span><br><span class="culture-rest">are our work culture.</span>',
 
