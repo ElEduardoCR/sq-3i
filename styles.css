@@ -818,6 +818,118 @@ h1, h2, h3, h4 {
     border-radius: 4px;
 }
 
+/* Maquinado — superficie de aluminio con ranura central */
+.mock-mill {
+    background: linear-gradient(135deg, #c7c7cc 0%, #e5e5ea 45%, #aeaeb2 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transform: perspective(800px) rotateY(-6deg) rotateX(4deg);
+    position: relative;
+}
+
+.mock-mill::before {
+    content: '';
+    position: absolute;
+    inset: 18% 16%;
+    background:
+        repeating-linear-gradient(90deg, transparent 0 20px, rgba(0, 0, 0, 0.18) 20px 22px),
+        linear-gradient(180deg, #d1d1d6 0%, #98989d 100%);
+    border-radius: 6px;
+    box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, 0.25),
+        inset 0 -2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.mock-mill::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 35% 35%, #2c2c2e 0%, #1d1d1f 28%, #5a5a5e 32%, transparent 60%);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.18);
+}
+
+/* Corte láser — superficie oscura con haz láser brillante */
+.mock-laser {
+    background: linear-gradient(135deg, #1a1a1c 0%, #2c2c2e 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    transform: perspective(800px) rotateX(16deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.mock-laser::before {
+    content: '';
+    position: absolute;
+    inset: 28% 12%;
+    background:
+        linear-gradient(135deg,
+            transparent 42%,
+            rgba(255, 107, 0, 0.85) 47%,
+            rgba(255, 220, 100, 1) 50%,
+            rgba(255, 107, 0, 0.85) 53%,
+            transparent 58%);
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.7)) drop-shadow(0 0 24px rgba(255, 100, 0, 0.45));
+    border-radius: 4px;
+}
+
+.mock-laser::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 140, 0, 0.18) 0%, transparent 60%),
+        repeating-linear-gradient(45deg, transparent 0 14px, rgba(255, 255, 255, 0.03) 14px 15px);
+}
+
+/* Router CNC — superficie de madera con trayectoria de fresa */
+.mock-router {
+    background:
+        linear-gradient(110deg, #c9a36a 0%, #b88a52 50%, #8b6630 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    transform: perspective(800px) rotateY(6deg) rotateX(4deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.mock-router::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(85deg, transparent 0 10px, rgba(0, 0, 0, 0.10) 10px 12px),
+        repeating-linear-gradient(0deg, transparent 0 22px, rgba(0, 0, 0, 0.12) 22px 23px);
+}
+
+.mock-router::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64%;
+    height: 56%;
+    border: 3px dashed rgba(255, 255, 255, 0.65);
+    border-radius: 14px;
+    box-shadow:
+        inset 0 0 18px rgba(0, 0, 0, 0.25),
+        0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Cuando hay un número impar de productos, la última tarjeta ocupa el ancho completo */
+.products-grid .product-card:last-child:nth-child(odd),
+.product-card--wide:last-child {
+    grid-column: 1 / -1;
+}
+
+.product-card--wide:last-child .product-visual {
+    height: 360px;
+}
+
 /* ============================================
    Sectores
    ============================================ */
