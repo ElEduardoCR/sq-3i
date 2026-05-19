@@ -269,10 +269,12 @@ h1, h2, h3, h4 {
 
 .hero-logo {
     display: block;
-    width: clamp(140px, 16vw, 220px);
+    width: clamp(420px, 48vw, 660px);
+    max-width: 92%;
     height: auto;
     margin: 0 auto 28px;
-    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+    border-radius: 12px;
+    filter: drop-shadow(0 12px 36px rgba(0, 0, 0, 0.55));
     animation: fadeInUp 1s var(--ease-out) both;
 }
 
@@ -1036,10 +1038,10 @@ h1, h2, h3, h4 {
 }
 
 .footer-logo {
-    height: 72px;
+    height: 144px;
     width: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .footer-tagline {
