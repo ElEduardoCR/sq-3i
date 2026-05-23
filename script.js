@@ -201,6 +201,54 @@ if (slideshow) {
 }
 
 // ============================================
+// Slideshows de productos (genérico)
+// ============================================
+
+document.querySelectorAll('.product-slideshow').forEach((slideshow, index) => {
+    const slides = slideshow.querySelectorAll('.slide');
+    if (slides.length <= 1) return;
+
+    let current = 0;
+    let timer = null;
+    const INTERVAL = 3000;
+
+    function next() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }
+
+    function start() {
+        if (timer) return;
+        // Pequeño offset escalonado para que no cambien todos al mismo tiempo
+        const offset = (index % 6) * 350;
+        timer = setTimeout(function tick() {
+            next();
+            timer = setTimeout(tick, INTERVAL);
+        }, INTERVAL + offset);
+    }
+
+    function stop() {
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+    }
+
+    const visObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) start();
+            else stop();
+        });
+    }, { threshold: 0.2 });
+
+    visObserver.observe(slideshow);
+
+    slideshow.addEventListener('mouseenter', stop);
+    slideshow.addEventListener('mouseleave', start);
+});
+
+// ============================================
 // i18n — traducción ES / EN
 // ============================================
 
@@ -317,7 +365,7 @@ const translations = {
         'contact.phone': 'Teléfono',
         'contact.email': 'Email',
         'contact.location': 'Ubicación',
-        'contact.address': 'C. Villa Santa Lucía #12807<br>Chihuahua, Chih.',
+        'contact.address': 'Av. Terrazas 12815<br>Col. Las Ánimas, Sector 18<br>C.P. 31415, Chihuahua, Chih.',
 
         'facility.title': 'Nuestras instalaciones',
         'facility.copy': 'Conoce nuestra planta en Chihuahua, donde cada embalaje, etiqueta y estructura toma forma con la calidad que distingue a SQ-3I.',
@@ -439,7 +487,7 @@ const translations = {
         'contact.phone': 'Phone',
         'contact.email': 'Email',
         'contact.location': 'Location',
-        'contact.address': 'C. Villa Santa Lucía #12807<br>Chihuahua, Mexico',
+        'contact.address': 'Av. Terrazas 12815<br>Col. Las Ánimas, Sector 18<br>ZIP 31415, Chihuahua, Mexico',
 
         'facility.title': 'Our facilities',
         'facility.copy': 'Visit our plant in Chihuahua, where every package, label, and structure takes shape with the quality that defines SQ-3I.',
