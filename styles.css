@@ -1425,6 +1425,12 @@ h1, h2, h3, h4 {
         display: none;
     }
 
+    .nav-lang-item {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+    }
+
     .section {
         padding: 80px 24px;
     }
